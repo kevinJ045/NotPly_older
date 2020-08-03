@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NotPly | Example</title>
+
+
+    <!-- notply CSS/JS -->
+    <link href="dist/notply.css" rel="stylesheet">
+    <link href="../maxcdn.bootstrapcdn.com\icons\font-awesome\css\font-awesome.min.css" rel="stylesheet"/>
+    <link rel="icon shortcut" href="images/favicon.png" />
+    
+
+    <!-- general styles to make this page look decent -->
+    <style>
+       * {
+        box-sizing: border-box;
+      }
+
+      body {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font: 18px/1.4 'Open Sans', sans-serif;
+        color: #f6830f;
+        background-color: #ffd80c;
+        text-align: center;
+        text-shadow:0 0 0 1px #f6830f inset, 0 8px 0 0 #f6830f !important;
+      }
+
+      .a {
+        display: inline-block;
+        margin-bottom: 5px;
+        padding: 10px 30px;
+        border-radius: 5px;
+        color: #ffd80c;
+        background-color: #f6830f;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        position:relative;
+        top: -6px;
+        border:0;
+        -moz-outline-style:none;
+             outline:medium none;
+        transition: all 0.04s linear;
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-left:2px;
+        margin-right:2px;
+        box-shadow:0 0 0 1px #f6830f inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f6830f, 0 8px 8px 1px rgba(0,0,0,.2);
+      }
+
+      .a:active {
+        top:2px;
+        box-shadow:none;
+      }
+
+      section {
+        margin-top: 60px;
+      }
+      code {
+        display: block;
+        margin-top: 10px;
+        padding-left: 15px;
+        border-left: 5px solid #adb5bd;
+        background-color: #e9ecef;
+        white-space: pre-wrap;
+        font: 18px/1.4 'Open Sans', sans-serif;
+      }
+      code h4{
+        text-align: center;
+        width: 100%;
+      }
+      .FlashBang{
+        background-color: #f6830f;
+        color: #f6830f;
+      }
+      .custom2{
+        color: #f6830f;
+        background-color: #f6830f;
+      }
+      ::selection{
+        background-color: #f6830fee;
+        color: #f6830fee;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button style="display: none;" class="a" id="Example" data-notply="true" data-notply-button-class="a" data-notply-input-class="a" data-notply-input="true" data-notply-button-function="alertAsLoading('Searching',10000,'Good !!, We Found It');" data-notply-input-placeholder="Search..." data-notply-button="Search" data-notply-label="Search" data-notply-input-id="input" data-notply-icon="fa fa-search fa-2x white-text" data-notply-theme="FlashBang">Search For Things</button>
+
+
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/notply.js"></script>
+    <script>
+    NotPlyInitiate("html");
+    notply('welcome');
+    alertAsConfirm("Hello, User, Please Login","Login","Login","login()","alertAs('What?');window.history.back()");
+    function login() {
+      alertAsPrompt('Login','That\'s so simple','Login',`notply('Welcome ' + popUpInput());alertAs('You are: ' + popUpInput()); $('#Example').show();`,`alertAs('You Clicked Cancel')`)
+    }
+    </script>
+  </body>
+</html>
