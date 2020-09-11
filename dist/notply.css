@@ -18,18 +18,28 @@
 
 NotPly version 1.0.5.6.2.55.1
 
- You know what, i think im better in css that js
+ You know what, i think im better in css than js,
+
+
+ anyways, don't edit this one, please !!
 
 
 
 */
 
+:root{
+  --closebtn: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAACPCAMAAAD0vXihAAAAnFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAD///+1zGGTAAAAM3RSTlN0doWH+4iJ/IuKjQiM+XkF85IN+AaT9PeWCQOQDHOU9QoH/Q9w/nGV9guPAnWOAXIEkQD55VL/AAADrUlEQVR42u2a61riMBCG2VV6SMsiKEpogbTalRZB29z/vS2u4tIpSE4l3eeZ/Cb2dTIzmfkyvapbq4c8yIM8yIM8yIM8yIM8yIM8yIM8yIM8yIM8Fni2L+Wjzlcey9etQZ7165JPc3WceMrvf2+N8cyelpzzBdPA4Xz5NDPEM5s/8PcVUTUcNvm7/UHIQj0B37nlH2uUqOAkk8/tKxEfOsuzni/5fpUKFqLl1/b7+VqbZ/iy4v9WJO1DLDrYvprPdHl+DQ7+Hs/CQA4nCLPD/YMXXZ6Q1xeRAgoI2O7r8oxJVv+LMlFGo/rejIy1/Zlt6kBZFAvnnQhs3TAD8R6EKQASzNQ5wElFnE8gHw6BD2WFUJSxApx0ODR0XyS+gg81fMcXyqY9sTCBPnQWKC/BFsHA7KmkEZ56Z4BycFjCiUuwHks8YH3vW+tT6Due6NUnWh9SEGVp+M0XgkZkCSct4XqVQaDTySQvIbv4tSdePzPiioU9dGWXSNzCEvV8APPQhor4ThbKVCky/QUj9XPgxV3zR3dF/TepL1U0SfU7eQOINq1T/4XryNVwcv1X8w6gMAw51yqYJPvBANwCqVP7XuAAA0ayJbdsfxqUwADOwS05dID5SknrKPTLDAC5/a9v0r4LcORbNvn+nS3qH72++jwT5gMclQ5SQU+gEOhncNQ6C5X+UUXfyMGRpVc7IOZB31Fq+JX0ljG4L13nbdgokcbVxXh2lXo9rq/9sH5Y7iauLsiz6zpAogFBRxS1B2V9DCZGUJwm1YV5mleHUvllUD+MR6dwNhpSmoaeCcN+vzasssJT5UctFOng6Om98egW0twWWjia+jOdQp5FUHWK55la5DlyXoNRbo2nY/7csXjPi07lQ9jQW74vEpJ16T6loJm3XG/EBSi/CLFZj8F6NSNDm/UqDPTMYzbredjvuH1qs9+B/aDrM5v9YLNfpjb7ZTk9QVreaFtvCdvVW6T1KNdvU4/qmF7XaErt6pnwXz+l9wLqtvReYT0cOlk7enjH3gs69p7SeG8iVt+b4Hvc2SfUdt/jGu+V52uJNt8rO/aea+i9O3PejPAYmwdw+4kBHoPzEq5HtXnMzpP4sS6P4Xmbvi7PD815JGJ4Hmk215zXGtXmtd60/Vl3nu2gHVkamGfTn/cLnvfW6W2N5MOOzUPu50UnXZkX/ZinnWiocDugmydz87TvPjQaVxrL8LzxBRfyIA/yIA/yIA/yIA/yIA/yIA/yIA/yIM//zvMHiBlfHx8KVfgAAAAASUVORK5CYII=");
+  --transit: all 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+  --transit8: all 0.8s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+  --transit1: all 1.5s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+}
+
 .overflowHidden{
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .notply { 
-    position: fixed;
+  position: fixed !important;
 	top: 0 ;
 	left: 0 ;
 	background-color: #232323 ;
@@ -50,6 +60,12 @@ NotPly version 1.0.5.6.2.55.1
   box-shadow: 0px 5px 13px rgba(10,10,10,0.5);
   text-shadow: none; 
 }
+
+.notply.close {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+
 .notply .icon{
 	position: absolute;
 	top: 0 ;
@@ -128,7 +144,7 @@ NotPly version 1.0.5.6.2.55.1
   width:20px;
   height: 20px;
   display: block;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAACPCAMAAAD0vXihAAAAnFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAD///+1zGGTAAAAM3RSTlN0doWH+4iJ/IuKjQiM+XkF85IN+AaT9PeWCQOQDHOU9QoH/Q9w/nGV9guPAnWOAXIEkQD55VL/AAADrUlEQVR42u2a61riMBCG2VV6SMsiKEpogbTalRZB29z/vS2u4tIpSE4l3eeZ/Cb2dTIzmfkyvapbq4c8yIM8yIM8yIM8yIM8yIM8yIM8yIM8yIM8Fni2L+Wjzlcey9etQZ7165JPc3WceMrvf2+N8cyelpzzBdPA4Xz5NDPEM5s/8PcVUTUcNvm7/UHIQj0B37nlH2uUqOAkk8/tKxEfOsuzni/5fpUKFqLl1/b7+VqbZ/iy4v9WJO1DLDrYvprPdHl+DQ7+Hs/CQA4nCLPD/YMXXZ6Q1xeRAgoI2O7r8oxJVv+LMlFGo/rejIy1/Zlt6kBZFAvnnQhs3TAD8R6EKQASzNQ5wElFnE8gHw6BD2WFUJSxApx0ODR0XyS+gg81fMcXyqY9sTCBPnQWKC/BFsHA7KmkEZ56Z4BycFjCiUuwHks8YH3vW+tT6Due6NUnWh9SEGVp+M0XgkZkCSct4XqVQaDTySQvIbv4tSdePzPiioU9dGWXSNzCEvV8APPQhor4ThbKVCky/QUj9XPgxV3zR3dF/TepL1U0SfU7eQOINq1T/4XryNVwcv1X8w6gMAw51yqYJPvBANwCqVP7XuAAA0ayJbdsfxqUwADOwS05dID5SknrKPTLDAC5/a9v0r4LcORbNvn+nS3qH72++jwT5gMclQ5SQU+gEOhncNQ6C5X+UUXfyMGRpVc7IOZB31Fq+JX0ljG4L13nbdgokcbVxXh2lXo9rq/9sH5Y7iauLsiz6zpAogFBRxS1B2V9DCZGUJwm1YV5mleHUvllUD+MR6dwNhpSmoaeCcN+vzasssJT5UctFOng6Om98egW0twWWjia+jOdQp5FUHWK55la5DlyXoNRbo2nY/7csXjPi07lQ9jQW74vEpJ16T6loJm3XG/EBSi/CLFZj8F6NSNDm/UqDPTMYzbredjvuH1qs9+B/aDrM5v9YLNfpjb7ZTk9QVreaFtvCdvVW6T1KNdvU4/qmF7XaErt6pnwXz+l9wLqtvReYT0cOlk7enjH3gs69p7SeG8iVt+b4Hvc2SfUdt/jGu+V52uJNt8rO/aea+i9O3PejPAYmwdw+4kBHoPzEq5HtXnMzpP4sS6P4Xmbvi7PD815JGJ4Hmk215zXGtXmtd60/Vl3nu2gHVkamGfTn/cLnvfW6W2N5MOOzUPu50UnXZkX/ZinnWiocDugmydz87TvPjQaVxrL8LzxBRfyIA/yIA/yIA/yIA/yIA/yIA/yIA/yIM//zvMHiBlfHx8KVfgAAAAASUVORK5CYII=");
+  background: var(--closebtn);
   background-size: 100%;
 }
 
@@ -230,7 +246,6 @@ NotPly version 1.0.5.6.2.55.1
   }
 }
 
-@charset "UTF-8";
 
 /*!
 Animate.css - http://daneden.me/animate
@@ -1471,6 +1486,15 @@ Copyright (c) 2015 Daniel Eden
 
   }
 
+  .NotAlert-container.close .NotAlert {
+    -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+  }
+
     .NotAlert-container .NotAlert {
     width: 250px;
     max-width: 100%;
@@ -1564,7 +1588,7 @@ Copyright (c) 2015 Daniel Eden
       background-color: #387ef5;
     color: #fff; }
 .NotAlert .button {
-  background-color: #999;
+  background-color: #ddd;
   color: #387ef5;
   position: relative;
   display: inline-block;
@@ -1664,6 +1688,17 @@ Copyright (c) 2015 Daniel Eden
     transform: scale(1);
     -webkit-transform: scale(1); } }
 
+.NotAlert-container.dark .NotAlert{
+  background-color: #232323 !important;
+}
+
+.NotAlert-container.dark .NotAlert .button.active, 
+.NotAlert-container.dark .NotAlert .button.activated,
+.NotAlert-container.dark .NotAlert .button,
+.NotAlert-container.dark .NotAlert .NotAlert-buttons .button, 
+.NotAlert-container.dark .NotAlert .NotAlert-head {
+    border-color: #242425 !important;
+}
 
 .NotAlert-success .NotAlert-head{
   background-color: #5CB85C;
@@ -1768,7 +1803,7 @@ Copyright (c) 2015 Daniel Eden
   color: #ffffff;
   padding: 20px 10px 20px 10px;
   z-index: 999999999999999999 !important;
-  transition: .8s all !important;
+  transition: all 1s !important;
 }
 
 .NotToast .NotToastBottom{
@@ -1797,12 +1832,20 @@ Copyright (c) 2015 Daniel Eden
   box-shadow: 0px 5px 13px rgba(10,10,10,0.5);
 }
 
+.NotToast-top.close{
+  transform: translate(-50%,-130%);
+}
 .NotToast-top{
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translate(-50%,0);
   animation: 1s 1 fromUp;
+}
+
+
+.NotToast-bottom.close{
+  transform: translate(-50%,130%);
 }
 .NotToast-bottom{
   position: fixed;
@@ -1811,11 +1854,19 @@ Copyright (c) 2015 Daniel Eden
   transform: translate(-50%,0);
   animation: 1s 1 fromDown;
 }
+
+.NotToast-top-left.close{
+  transform: translate(-130%,0);
+}
 .NotToast-top-left{
   position: fixed;
   top: 20px;
   left: 20px; 
   animation: 1s 1 bounceInLeft;
+}
+
+.NotToast-top-right.close{
+  transform: translate(130%,0);
 }
 .NotToast-top-right{
   position: fixed;
@@ -1823,18 +1874,32 @@ Copyright (c) 2015 Daniel Eden
   right: 20px;
   animation: 1s 1 bounceInRight;
 }
+
+.NotToast-center.close{
+  transform: scale(0.1) rotate(900deg);
+  left: 0;
+  top: 0;
+}
 .NotToast-center{
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: scale(1) rotate(0deg) translate(-50%,-50%);
   animation: 1s 1 FromCenter;
+}
+
+.NotToast-bottom-left.close{
+  transform: translate(-130%,0);
 }
 .NotToast-bottom-left{
   position: fixed;
   bottom: 20px;
   left: 20px; 
   animation: 1s 1 bounceInLeft;
+}
+
+.NotToast-bottom-right.close{
+  transform: translate(130%,0);
 }
 .NotToast-bottom-right{
   position: fixed;
@@ -1851,7 +1916,7 @@ Copyright (c) 2015 Daniel Eden
   width:20px;
   height: 20px;
   display: block;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAACPCAMAAAD0vXihAAAAnFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAD///+1zGGTAAAAM3RSTlN0doWH+4iJ/IuKjQiM+XkF85IN+AaT9PeWCQOQDHOU9QoH/Q9w/nGV9guPAnWOAXIEkQD55VL/AAADrUlEQVR42u2a61riMBCG2VV6SMsiKEpogbTalRZB29z/vS2u4tIpSE4l3eeZ/Cb2dTIzmfkyvapbq4c8yIM8yIM8yIM8yIM8yIM8yIM8yIM8yIM8Fni2L+Wjzlcey9etQZ7165JPc3WceMrvf2+N8cyelpzzBdPA4Xz5NDPEM5s/8PcVUTUcNvm7/UHIQj0B37nlH2uUqOAkk8/tKxEfOsuzni/5fpUKFqLl1/b7+VqbZ/iy4v9WJO1DLDrYvprPdHl+DQ7+Hs/CQA4nCLPD/YMXXZ6Q1xeRAgoI2O7r8oxJVv+LMlFGo/rejIy1/Zlt6kBZFAvnnQhs3TAD8R6EKQASzNQ5wElFnE8gHw6BD2WFUJSxApx0ODR0XyS+gg81fMcXyqY9sTCBPnQWKC/BFsHA7KmkEZ56Z4BycFjCiUuwHks8YH3vW+tT6Due6NUnWh9SEGVp+M0XgkZkCSct4XqVQaDTySQvIbv4tSdePzPiioU9dGWXSNzCEvV8APPQhor4ThbKVCky/QUj9XPgxV3zR3dF/TepL1U0SfU7eQOINq1T/4XryNVwcv1X8w6gMAw51yqYJPvBANwCqVP7XuAAA0ayJbdsfxqUwADOwS05dID5SknrKPTLDAC5/a9v0r4LcORbNvn+nS3qH72++jwT5gMclQ5SQU+gEOhncNQ6C5X+UUXfyMGRpVc7IOZB31Fq+JX0ljG4L13nbdgokcbVxXh2lXo9rq/9sH5Y7iauLsiz6zpAogFBRxS1B2V9DCZGUJwm1YV5mleHUvllUD+MR6dwNhpSmoaeCcN+vzasssJT5UctFOng6Om98egW0twWWjia+jOdQp5FUHWK55la5DlyXoNRbo2nY/7csXjPi07lQ9jQW74vEpJ16T6loJm3XG/EBSi/CLFZj8F6NSNDm/UqDPTMYzbredjvuH1qs9+B/aDrM5v9YLNfpjb7ZTk9QVreaFtvCdvVW6T1KNdvU4/qmF7XaErt6pnwXz+l9wLqtvReYT0cOlk7enjH3gs69p7SeG8iVt+b4Hvc2SfUdt/jGu+V52uJNt8rO/aea+i9O3PejPAYmwdw+4kBHoPzEq5HtXnMzpP4sS6P4Xmbvi7PD815JGJ4Hmk215zXGtXmtd60/Vl3nu2gHVkamGfTn/cLnvfW6W2N5MOOzUPu50UnXZkX/ZinnWiocDugmydz87TvPjQaVxrL8LzxBRfyIA/yIA/yIA/yIA/yIA/yIA/yIA/yIM//zvMHiBlfHx8KVfgAAAAASUVORK5CYII=");
+  background: var(--closebtn);
   background-size: 100%;
   cursor: pointer;
 }
@@ -2135,19 +2200,23 @@ Copyright (c) 2015 Daniel Eden
          .Notbottomsheet-content {
             position: fixed;
             bottom: 0;
-            background-color: #ffffff;
             width: 100%;
+            background: #fff;
             -webkit-animation-name: NotbottomsheetslideIn;
             -webkit-animation-duration: 0.5s;
             animation-name: NotbottomsheetslideIn;
             animation-duration: 0.5s;
             z-index: 1;
+            transition: var(--transit1);
+         }
+         .Notbottomsheet.close .Notbottomsheet-content{
+          transform: translate(0,120%) !important;
          }
          .Notbottomsheetend {
           width:20px;
           height: 20px;
           display: block;
-          background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAACPCAMAAAD0vXihAAAAnFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAD///+1zGGTAAAAM3RSTlN0doWH+4iJ/IuKjQiM+XkF85IN+AaT9PeWCQOQDHOU9QoH/Q9w/nGV9guPAnWOAXIEkQD55VL/AAADrUlEQVR42u2a61riMBCG2VV6SMsiKEpogbTalRZB29z/vS2u4tIpSE4l3eeZ/Cb2dTIzmfkyvapbq4c8yIM8yIM8yIM8yIM8yIM8yIM8yIM8yIM8Fni2L+Wjzlcey9etQZ7165JPc3WceMrvf2+N8cyelpzzBdPA4Xz5NDPEM5s/8PcVUTUcNvm7/UHIQj0B37nlH2uUqOAkk8/tKxEfOsuzni/5fpUKFqLl1/b7+VqbZ/iy4v9WJO1DLDrYvprPdHl+DQ7+Hs/CQA4nCLPD/YMXXZ6Q1xeRAgoI2O7r8oxJVv+LMlFGo/rejIy1/Zlt6kBZFAvnnQhs3TAD8R6EKQASzNQ5wElFnE8gHw6BD2WFUJSxApx0ODR0XyS+gg81fMcXyqY9sTCBPnQWKC/BFsHA7KmkEZ56Z4BycFjCiUuwHks8YH3vW+tT6Due6NUnWh9SEGVp+M0XgkZkCSct4XqVQaDTySQvIbv4tSdePzPiioU9dGWXSNzCEvV8APPQhor4ThbKVCky/QUj9XPgxV3zR3dF/TepL1U0SfU7eQOINq1T/4XryNVwcv1X8w6gMAw51yqYJPvBANwCqVP7XuAAA0ayJbdsfxqUwADOwS05dID5SknrKPTLDAC5/a9v0r4LcORbNvn+nS3qH72++jwT5gMclQ5SQU+gEOhncNQ6C5X+UUXfyMGRpVc7IOZB31Fq+JX0ljG4L13nbdgokcbVxXh2lXo9rq/9sH5Y7iauLsiz6zpAogFBRxS1B2V9DCZGUJwm1YV5mleHUvllUD+MR6dwNhpSmoaeCcN+vzasssJT5UctFOng6Om98egW0twWWjia+jOdQp5FUHWK55la5DlyXoNRbo2nY/7csXjPi07lQ9jQW74vEpJ16T6loJm3XG/EBSi/CLFZj8F6NSNDm/UqDPTMYzbredjvuH1qs9+B/aDrM5v9YLNfpjb7ZTk9QVreaFtvCdvVW6T1KNdvU4/qmF7XaErt6pnwXz+l9wLqtvReYT0cOlk7enjH3gs69p7SeG8iVt+b4Hvc2SfUdt/jGu+V52uJNt8rO/aea+i9O3PejPAYmwdw+4kBHoPzEq5HtXnMzpP4sS6P4Xmbvi7PD815JGJ4Hmk215zXGtXmtd60/Vl3nu2gHVkamGfTn/cLnvfW6W2N5MOOzUPu50UnXZkX/ZinnWiocDugmydz87TvPjQaVxrL8LzxBRfyIA/yIA/yIA/yIA/yIA/yIA/yIA/yIM//zvMHiBlfHx8KVfgAAAAASUVORK5CYII=");
+          background: var(--closebtn);
           background-size: 100%;
           cursor: pointer;
           position: absolute;
@@ -2157,8 +2226,6 @@ Copyright (c) 2015 Daniel Eden
          }
          .Notbottomsheet-header {
             padding: 1px 10px;
-            background-color: #8AC1E0;
-            color: white;
             position: relative;
          }
          .Notbottomsheet-body {padding: 1px 5px;}

@@ -1,0 +1,140 @@
+* {
+        box-sizing: border-box;
+      }
+
+      body {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font: 18px/1.4 'Open Sans', sans-serif;
+        color: #f9ad32;
+        background-color: #ffd80c;
+        text-align: center;
+        text-shadow: 0 1px 0 #f6830f, 0 2px 0 #f6830f, 0 3px 0 #f6830f, 0 4px 0 #f6830f,
+        0 5px 0 #f6830f, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.15);
+        }
+
+      .a {
+        display: inline-block;
+        margin-bottom: 5px;
+        padding: 10px 30px;
+        border-radius: 5px;
+        color: #ffd80c;
+        background-color: #f6830f;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        position:relative;
+        top: -6px;
+        border:0;
+        -moz-outline-style:none;
+             outline:medium none;
+        transition: all 0.04s linear;
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-left:2px;
+        margin-right:2px;
+        box-shadow:0 0 0 1px #f6830f inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f6830f, 0 8px 8px 1px rgba(0,0,0,.2);
+        text-shadow: none;
+      }
+
+      .a:active {
+        top:2px;
+        box-shadow:none;
+      }
+
+      section {
+        margin-top: 60px;
+      }
+      code {
+       color: #cc3333;
+       background: #fff;
+       padding: 2px 5px;
+       border-radius: 5px;
+       text-shadow: none;
+      }
+
+      article{
+        text-align: left;
+      }
+
+      
+      .custom2{
+        color: #f6830f;
+        background-color: #ffd80c;
+      }
+      ::selection{
+        background-color: #f6830fee;
+        color: #ffd80cee;
+      }
+      #LOGO{
+        width: 185px;
+        position: relative;
+      }
+      .FlashGang{
+        background: url("images/bn.png");
+        background-size: cover;
+      }
+      .github-corner:hover .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+        @keyframes octocat-wave {
+          0%,
+          100% {
+            transform: rotate(0);
+          }
+          20%,
+          60% {
+            transform: rotate(-25deg);
+          }
+          40%,
+          80% {
+            transform: rotate(10deg);
+          }
+        }
+        @media (max-width: 500px) {
+          .github-corner:hover .octo-arm {
+            animation: none;
+          }
+          .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out;
+          }
+        }
+/* Custom Theme */
+.FlashBang{
+  background: #f6830f !important;
+  color: #ffd80c ;
+}
+
+.FlashBang .NotAlert-head{
+  background-color: #ffd80c;
+  color: #f6830f;
+  border-color: #f6830f;
+}
+
+.FlashBang .button {
+  background-color: #f6830f;
+  border-color: #ffd80c;
+}
+
+.FlashBang .dot1, .FlashBang .dot2 {
+  background-color: #ffd80c;
+}
+
+.FlashBang .button,.FlashBang .NotAlert-body{
+  color: #ffd80c;
+}
+
+.FlashBang .button:last-child{
+  background-color: #ffd80c;
+  color: #f6830f;
+  border-color: #f6830f;
+}
+
+.FlashBang input {
+    color: #ffd80c;
+    border-bottom: 2px solid #ffd80c;
+}

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NotPly | Demo</title>
+
+
+    <!-- notply CSS/JS -->
+    <link href="dist/notply.css" rel="stylesheet">
+    <link rel="icon shortcut" href="images/favicon.png" />
+
+
+    <script src="https://kit.fontawesome.com/1f2404c1fc.js" crossorigin="anonymous"></script>    
+    
+
+    <!-- general styles to make this page look decent -->
+    <link rel="stylesheet" type="text/css" href="demo.css">
+  </head>
+  <body>
+    <a href="https://github.com/kevinj045/notply" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#f6830f; color:#fff; position: fixed; top: -60px; border: 0; right: -60px;transition: .8s;z-index: 100;"
+            aria-hidden="true">
+          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+          <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;"
+              class="octo-arm"></path>
+          <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+        </svg>
+      </a>
+
+    <img src="images/NotPly.png" id="LOGO" class="slider"/>
+    <p class="slider">By Kevin | j 045 / Kevin jhonson 045</p>
+    <p class="slider">
+      <a class="a github-commit" href="https://github.com/kevinj045/notply">
+        GitHub Forks: NAN <!-- Here Will be appended the forks from github-->
+      </a>
+    </p>
+
+    <p class="slider">NotPly is a simple plugin that let's you show notifications, There are 3 types of notifications here:</p>
+    <p class="slider"> Hey Hey, and also, to use this plugin, use <code>$('body').NotPly()</code> But make sure it's on a big container like <code>&lt;html></code> tag or <code>&lt;body></code> tag, <code>$('#bigElement').NotPly()</code>, if you want use the <code>$('body').NotPly()</code> method,
+
+    <article class="slider">
+      <h4>Notifications : </h4>
+      <p>Notifications are the basic plugins in here, also you can activate notifications with the <code>$('body').NotPly()</code> method, simply you can use the <code>$('body').NotPly({<br>
+  text: "&lt;p>Hello &lt;/p>",<br>
+  oncancel: function(){<br>
+    alert("Cancel")<br>
+  },<br>
+  type: <b>"notply"</b>,<br>
+  icon: "fa fa-file",<br>
+  theme: "notply-warning",<br>
+  transition: ".8s"<br>
+ });</code> method, if you want to make the data attribute method, see the demo</p>
+    </article>
+    <article class="slider">
+      <h4>Toasts : </h4>
+      <p>Toasts Are little notifications that appear in any position of the screen, they can be used with the <code>$('body').NotPly()</code> method, the full functionality of this method will be: 
+      <br><br><code>$('body').NotPly({<br>
+  text: "&lt;p>Hello &lt;/p>",<br>
+  title: "Title",<br>
+  oncancel: function(){<br>
+    alert("Cancel")<br>
+  },<br>
+  type: <b>"toast"</b>,//Type<br>
+  theme: "notply-warning",<br>
+  transition: ".8s"<br>
+ });</code></p>
+    </article>
+    <article class="slider">
+      <h4>Alerts : </h4>
+      <p>Alers are Here to replace the default javascript popup window, they are available only with the <code>$('body').NotPly()</code> method, also this method have more methods like 
+        <code>$('body').NotPly({<br>
+  text: "&lt;p>Hello &lt;/p>",<br>
+  title: "Title",<br>
+  Sbuttons: ["hello",'hii'],<br>
+  oncancel: function(){<br>
+    alert("Cancel")<br>
+  },<br>
+  type: <b>"alert"</b>,<br>
+  theme: "info",<br>
+  transition: ".8s"<br>
+ });</code>
+        <br>
+      </p>
+    </article>
+
+    <article class="slider">
+      <h4>Sheets : </h4>
+      <p>Sheets are bottom aligned modals, they can be called with the <code>$('body').NotPly()</code>, To call them use
+        <code>$('body').NotPly({<br>
+  text: "&lt;p>Hello &lt;/p>",<br>
+  title: "Title",<br>
+  oncancel: function(){<br>
+    alert("Cancel")<br>
+  },<br>
+  type: <b>"sheet"</b>,<br>
+  theme: "custom",<br>
+  transition: ".8s"<br>
+ });</code>
+        <br>
+      </p>
+    </article>
+
+    <section>
+      <h2>Normal</h2>
+      <p>Look at this. This notification is customizable, you can change the text and the icon</p>
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'Normal Simple Notply'
+      });
+      "> NotPly Me !</a>
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'With A Custom Icon',
+        icon: 'fa fa-2x white-text fa-user'
+      });
+      "> NotPly Me !</a>
+    </section>
+
+    <section>
+      <h2>Themes</h2>
+      <p>There are 4 themes available.</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Normal Simple Notply',
+        theme: 'notply-info',
+      });
+      " href="#!"> NotPly Me !</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Normal Simple Notply',
+        theme: 'notply-success',
+      });
+      " href="#!"> NotPly Me !</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Normal Simple Notply',
+        theme: 'notply-error',
+      });
+      " href="#!"> NotPly Me !</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Normal Simple Notply',
+        theme: 'notply-warning',
+      });
+      " href="#!"> NotPly Me !</a>
+    </section>
+
+    <section>
+      <h2>Custom theme</h2>
+      <p>You can Put your own theme or background or background image using css.</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Custom Theme 1',
+        theme: 'FlashBang',
+      });
+      " href="#!"> NotPly Me !</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Custom Theme 2',
+        theme: 'custom2',
+      });
+      "> NotPly Me !</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Custom Theme 3',
+        theme: 'FlashGang',
+      });
+      " href="#!"> NotPly Me !</a>
+    </section>
+
+    <section>
+      <h2>Custom transition</h2>
+      <p>You can Put your own transition if you want, make it 0 to have no animation</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Transition 8s',
+        transition: '8s',
+      });
+      " href="#!"> 8s</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Transition 0.5s',
+        transition: '0.5',
+      });
+      " href="#!"> 0.5s</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Transition 0s',
+        transition: '0s',
+      });
+      " href="#!"> 0s</a>
+    </section>
+
+    <section>
+      <h2>Custom HTMLs</h2>
+      <p>You Can Put Custom Html As Well !!</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Who can hate this !!<br><button class=\'a\' onclick=\'alert(`How dare you?`)\'>I Can</button>',
+      });
+      " href="#!"> NotPly Me !</a>
+    </section>
+
+    <section>
+      <h2>Custom Close Buttons</h2>
+      <p>Look At this, you can add a close btn your self</p>
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'Simple NotPly Demo <br><button class=\'a notClose\' onclick=\'alert(`Closed`)\'>Close</button>',
+      });
+      "> NotPly Me !</a>
+    </section>
+
+    <section>
+      <h2>Toasts</h2>
+      <p>Hope you will love them, they seem so pretty</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Simple NotPly Demo',
+        title: 'Demo Title',
+        type: 'toast',
+      });
+      ">Simple</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Click Close Button <br><button class=\'a notClose\' onclick=\'alert(`Closed`)\'>Close</button>',
+        title: 'Demo Close',
+        type: 'toast',
+        closebtn: false,
+      });
+      ">Close Button</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'No Border Radius',
+        title: 'Demo Radius',
+        type: 'toast',
+        borderRadius: '0px',
+      });
+      ">No radius</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Custom Border Radius',
+        title: 'Demo Radius',
+        type: 'toast',
+        borderRadius: '10px',
+      });
+      ">Custom radius</a>
+    </section>
+
+    <section>
+      <h2>Toast Themes</h2>
+      <p>There are 4 themes for toasts, try them</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using default NotPly(plugin) themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'info',
+      });
+      ">Theme : info</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using default NotPly(plugin) themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'success',
+      });
+      ">Theme : success</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using default NotPly(plugin) themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'warning',
+      });
+      ">Theme : warning</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using default NotPly(plugin) themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'error',
+      });
+      ">Theme :   error</a>
+    </section>
+
+    <section>
+      <h2>Custom Themes</h2>
+      <p>You can put a Custom css to the toasts</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using Custom themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'FlashBang',
+      });
+      ">Theme :   Custom</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using Custom themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'custom2',
+      });
+      ">Theme :   Custom</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Using Custom themes',
+        title: 'Demo Theme',
+        type: 'toast',
+        theme: 'FlashGang',
+      });
+      ">Theme :   Custom</a>
+    </section>
+
+     <section>
+      <h2>Transitions</h2>
+      <p>If you want to make the animation faster or slower, or no animation use this</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Transition 8s',
+        title: 'Demo Title',
+        type: 'toast',
+        transition: '8s',
+      });
+      ">8s</a>
+    <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Transition 0.5s',
+        title: 'Demo Title',
+        type: 'toast',
+        transition: '0.5s',
+      });
+      ">0.5s</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Transition 0s',
+        title: 'Demo Title',
+        type: 'toast',
+        transition: '0s',
+      });
+      ">0s</a>
+    </section>
+
+    <section>
+      <h2>Positioning Toasts</h2>
+      <p>You can give positions to these toasts</p>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast top',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'top',
+      });
+      ">Position :   top</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast top-left',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'top-left',
+      });
+      ">Position :   top-left</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast top-right',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'top-right',
+      })
+      ">Position :   top-right</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast center',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'center',
+      })
+      ">Position :   center</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast bottom',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'bottom',
+      })
+      ">Position :   bottom</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast bottom',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'bottom-left',
+      })
+      ">Position :   bottom-left</a>
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'NotToast bottom',
+        title: 'Demo Title',
+        type: 'toast',
+        position: 'bottom-right',
+      })
+      ">Position :   bottom-right</a>
+    </section>
+
+
+    <section>
+      <h2>Alerts !!</h2>
+      <p>This plugin also has a simple javascript method that allows you to make custom popup dialogs, finally we got rid of the default javascript dialog</p>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Please Wait',
+        title: 'Loading',
+        type: 'ALert loading', 
+      });
+      "> Loading</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
+        text: 'Hello',
+        title: 'Hii',
+        type: 'ALert', // Case Insensitive
+      });
+      "> Normal</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
+        text: '<input type=\'text\' placeholder=\'Custom HTML\'>',
+        title: '<i>Hii</i>',
+        type: 'ALert',
+      });
+      "> Html</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
+        text: 'Dark',
+        title: 'Dark',
+        type: 'ALert', 
+        darkTheme: true,
+      });
+      "> Dark</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
+        text: 'Custom Close Btn <br><button class=\'a notClose\' onclick=\'alert(`Closed`)\'>Close</button>',
+        title: 'Title',
+        type: 'alert',
+      });
+      "> Close Button</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Are you sure to do whatever you are doing?',
+        title: 'Confirmation',
+        type: 'alert confirm',
+        onsubmit: function(){alert('Submitted')},
+        oncancel: function(){alert('canceled')},
+        Sbuttons: ['Nope','Yup'],
+      });
+      "> Confirm</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Put your name Please',
+        title: 'Your name',
+        type: 'alert prompt',
+        onsubmit: function(ee){alert('Your Name Is ' + ee)},
+        oncancel: function(){alert('canceled')},
+      });
+      "> Prompt</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
+        text: 'Prompt Password Type',
+        title: 'Pasword',
+        type: 'ALert prompt', 
+        pt: 'password',
+        onsubmit: function(ee){alert('Password Is: ' + ee)},
+        oncancel: function(){alert('canceled')},
+      });
+      "> Password</a>
+    </section>
+    <section>
+      <h2>Themes</h2>
+      <p>Alerts have 4 themes for each type alert, but have no custom themes yet !!</p>
+      <a class="a"  onclick="
+      $('body').NotPly({
+        text: 'Please Wait',
+        title: 'Loading',
+        type: 'ALert loading', 
+        theme: 'success',
+      });
+      "> Theme : success</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Hello',
+        title: 'Hi',
+        type: 'alert', 
+        theme: 'info',
+        darkTheme: true,
+      });
+      "> Theme : info</a>
+      
+     
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Are you sure to do whatever you are doing?',
+        title: 'Confirmation',
+        type: 'alert confirm', 
+        theme: 'warning',
+        onsubmit: function(){alert('Submitted')},
+        oncancel: function(){alert('canceled')}
+      });
+      "> Theme : warning</a>
+
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Put your name Please',
+        title: 'Your name',
+        type: 'alert prompt',
+        theme: 'error',
+        onsubmit: function(ee){alert('Your Name Is ' + ee)},
+        oncancel: function(){alert('canceled')},
+      });
+      "> Theme : error</a>
+    </section>
+
+    <section>
+      <h2>Custom Themes</h2>
+      <p>Well, For alerts custom themes are kinda.., just not simple like others
+      </p>
+      <a class="a"  onclick="
+      $('body').NotPly({
+        text: daffy,
+        title: 'Custom Theme',
+        type: 'ALert', 
+        theme: 'FlashBang',
+      });
+      "> Theme : Custom</a>
+
+      <a class="a"  onclick="
+      $('body').NotPly({
+        text: 'Please Wait',
+        title: 'Loading',
+        type: 'ALert loading', 
+        theme: 'FlashBang',
+      });
+      "> Theme : Custom</a>
+      
+     
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Are you sure to do whatever you are doing?',
+        title: 'Confirmation',
+        type: 'alert confirm', 
+        theme: 'FlashBang',
+        onsubmit: function(){alert('Submitted')},
+        oncancel: function(){alert('canceled')}
+      });
+      "> Theme : Custom</a>
+
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Put your name Please',
+        title: 'Your name',
+        type: 'alert prompt',
+        theme: 'FlashBang',
+        onsubmit: function(ee){alert('Your Name Is ' + ee)},
+        oncancel: function(){alert('canceled')},
+      });
+      "> Theme : Custom</a>
+    </section>
+    </section>
+
+    <section>
+      <h2>Not Sheets</h2>
+      <p>Need Bottom Popups, Not Sheets are available</p>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Demo For Bottom Sheets',
+        title: 'Demo Sheet',
+        type: 'sheet',
+        oncancel: function(){alert('canceled')},
+      });
+      ">Simple</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Demo For Bottom Sheets Close <br><button class=\'a notClose\' onclick=\'alert(`Closed`)\'>Close</button>',
+        title: 'Demo Sheet',
+        type: 'sheet',
+      });
+      ">Close Button</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Theming Is Always free, use any background, and also custom html is allowed',
+        title: 'Theming',
+        theme: 'custom2',
+        type: 'sheet',
+      });
+      ">Theming</a>
+    </section>
+
+    <section>
+      <h2>Callbacks</h2>
+      <p>Every NotPly Component have Callbacks, the callbacks return the title,text & type</p>
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'I am a NotPly <span id=\'TypeComponent\'>Type</span>',
+        type: 'notply',
+        callback: function(a,b,c){
+          alert('Title: '+a+', Text: '+b+', Type: '+c);
+          $('#TypeComponent').text(c)
+        },
+      });
+      "> NotPly Me !</a>
+
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'I am a NotPly <span id=\'TypeComponent\'>Type</span>',
+        title: 'Callback',
+        type: 'alert',
+        callback: function(a,b,c){
+          alert('Title: '+a+', Text: '+b+', Type: '+c);
+          $('#TypeComponent').text(c)
+        },
+      });
+      "> Alert Me !</a>
+
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'I am a NotPly <span id=\'TypeComponent\'>Type</span>',
+        title: 'Callback',
+        type: 'toast',
+        callback: function(a,b,c){
+          alert('Title: '+a+', Text: '+b+', Type: '+c);
+          $('#TypeComponent').text(c)
+        },
+      });
+      "> View Toast !</a>
+
+      <a class="a" href="#!" onclick="
+      $('body').NotPly({
+        text: 'I am a NotPly <span id=\'TypeComponent\'>Type</span>',
+        title: 'Callback',
+        type: 'sheet',
+        callback: function(a,b,c){
+          alert('Title: '+a+', Text: '+b+', Type: '+c);
+          $('#TypeComponent').text(c)
+        },
+      });
+      "> View Sheet !</a>
+
+    </section>
+
+    <section>
+      <h2>Using data- Attribute</h2>
+      <p>If You want to make a button, without a single function, use the data-notply attribute, unfortunately, there's only limited data- functions, if you want you can add your own, but you dont't wanna have lots of attributes in a tag, do you?</p>
+      <a class="a" href="#" data-notply="true" data-text="The text" data-type="">
+        NotPly Me !
+      </a>
+      <a class="a" href="#" data-notply="true" data-text="The text" data-title="The Title" data-type="alert">
+        Alert Me !
+      </a>
+      <a class="a" href="#" data-notply="true" data-text="The text" data-title="The Title" data-type="toast" data-position="bottom">
+        View Toast !
+      </a>
+      <a class="a" href="#" data-notply="true" data-text="The text" data-title="The Title" data-type="sheet" data-theme="custom2">
+        View Sheet !
+      </a>
+
+      <a class="a" href="#" data-notply="true" data-text="The text" data-title="The Title" data-type="alert" data-theme="custom2" 
+      data-callback="alert('hii')">
+        Callback
+      </a>
+    </section>
+
+    <section>
+      <h2>My Projects</h2>
+      <p>So... Did You Love The Plugin? Well Thanks For Downloading, So if you want to know more about my projects, click the Link below</p>
+      <a class="a" href="https://nextcog.epizy.com">
+        Visit My Site
+      </a>
+    </section>
+
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/notply.js"></script>
+    <script src="demo.js"></script>
+    <script>
+      // You can use a function like this to not spend a lot of lines in your project, or maybe use prototypes !!
+    function notply(text,title,icon,theme,buttons,tYPe,onsubmit,oncancel,transition,radius,position,closeBtn,callback) {
+
+          if(buttons){
+            var btnText = buttons[0];
+          } else {
+            var btnText = "";
+          }
+
+          // For Default make $('body').NotPly(), 
+          // For Custom Elements make $('body').NotPly()
+          $('body').NotPly({ 
+            text: text, // All || type: string 
+            title: title, // All || type: string
+            Sbuttons: buttons, // only for alerts || type: object
+            onsubmit: onsubmit, // All || type: function
+            oncancel: oncancel, // All || type: function
+            callback: callback, // All || type: function
+            type: tYPe, // All || type: string
+            doctitile: false, // All || type: boolean
+            icon: icon, // only for notifications || type: string
+            theme: theme, // All || type: string
+            closebtn: closeBtn, // only for toasts || type: boolean
+            transition: transition, // All || type: string
+            position: position, // only for toasts || type: string
+            borderRadius: radius, // only for toasts || type: string
+          });
+    }
+
+    /*alert($.fn.notply.name)
+    alert($.fn.notply.version)*/
+
+
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
