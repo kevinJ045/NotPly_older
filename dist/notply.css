@@ -32,6 +32,11 @@ NotPly version 1.0.5.6.2.55.1
   --transit: all 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
   --transit8: all 0.8s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
   --transit1: all 1.5s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+  --notply-blue-color: #387ef5;
+  --notply-info-color: #5BC0DE;
+  --notply-success-color: #5CB85C;
+  --notply-error-color: #D9534F;
+  --notply-warning-color: #F0AD4E;
 }
 
 .overflowHidden{
@@ -109,22 +114,22 @@ NotPly version 1.0.5.6.2.55.1
 
 .notply-info {
   color: #FFFFFF;
-  background-color: #5BC0DE;
+  background-color: var(--notply-info-color);
 }
 
 .notply-success {
   color: #FFFFFF;
-  background-color: #5CB85C;
+  background-color: var(--notply-success-color);
 }
 
 .notply-error {
   color: #FFFFFF;
-  background-color: #D9534F;
+  background-color: var(--notply-error-color);
 }
 
 .notply-warning {
   color: #FFFFFF;
-  background-color: #F0AD4E;
+  background-color: var(--notply-warning-color);
 }
 
 .notply .message { 
@@ -246,14 +251,6 @@ NotPly version 1.0.5.6.2.55.1
   }
 }
 
-
-/*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-
-Copyright (c) 2015 Daniel Eden
-*/
-
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -356,151 +353,6 @@ Copyright (c) 2015 Daniel Eden
   animation-name: bounce;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
-}
-
-@-webkit-keyframes flash {
-  from, 50%, to {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-@keyframes flash {
-  from, 50%, to {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-.flash {
-  -webkit-animation-name: flash;
-  animation-name: flash;
-}
-
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
-@-webkit-keyframes pulse {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-@keyframes pulse {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.pulse {
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-}
-
-@-webkit-keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(.95, 1.05, 1);
-    transform: scale3d(.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, .95, 1);
-    transform: scale3d(1.05, .95, 1);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-@keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(.95, 1.05, 1);
-    transform: scale3d(.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, .95, 1);
-    transform: scale3d(1.05, .95, 1);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
 }
 
 @-webkit-keyframes shake {
@@ -1406,44 +1258,6 @@ Copyright (c) 2015 Daniel Eden
   animation-name: bounceOutUp;
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-    visibility: hidden;
-    -ms-transform: scale(0.95);
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    visibility: visible;
-    -ms-transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    visibility: hidden;
-    -ms-transform: scale(0.95);
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    visibility: visible;
-    -ms-transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-  }
-}
-
-
-
 
 
 .NotAlert-container {
@@ -1527,15 +1341,15 @@ Copyright (c) 2015 Daniel Eden
     width: 100%;
     padding:5px;
     background: transparent;
-    color: #387ef5;
+    color: var(--notply-blue-color);
     border: none;
-    border-bottom: 2px solid #387ef5;
+    border-bottom: 2px solid var(--notply-blue-color);
     outline: none;text-shadow: none !important; }
 
 .NotAlert-head {
   padding: 15px 10px;
   border-bottom: 1px solid #eee;
-  text-align: center;background-color: #387ef5;
+  text-align: center;background-color: var(--notply-blue-color);
   color: #fff;text-shadow: none !important; }
 
 .NotAlert-title {
@@ -1552,7 +1366,7 @@ Copyright (c) 2015 Daniel Eden
 .NotAlert-body {
   padding: 10px;
   overflow: auto;
-  color: #387ef5;
+  color: var(--notply-blue-color);
   text-align: center;text-shadow: none !important; }
 
 .NotAlert-buttons {
@@ -1585,14 +1399,14 @@ Copyright (c) 2015 Daniel Eden
     margin-right: 5px;text-shadow: none !important; }
     .NotAlert-buttons .button:last-child {
       margin-right: 0px;
-      background-color: #387ef5;
+      background-color: var(--notply-blue-color);
     color: #fff; }
 .NotAlert .button {
   background-color: #ddd;
-  color: #387ef5;
+  color: var(--notply-blue-color);
   position: relative;
   display: inline-block;
-  margin: 0;
+  margin: 0 5px;
   padding: 0 12px;
   min-width: 52px;
   min-height: 47px;
@@ -1618,24 +1432,24 @@ Copyright (c) 2015 Daniel Eden
     bottom: -6px;
     left: -6px;
     content: ' '; }
-  .NotAlert.button .icon {
-    vertical-align: top;
-    pointer-events: none; }
-  .NotAlert.button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
-    display: inline-block;
-    padding: 0 0 1px 0;
-    vertical-align: inherit;
-    font-size: 24px;
-    line-height: 41px;
-    pointer-events: none; }
-  .NotAlert.button.icon-left:before {
+  .NotAlert .button .icon-left {
     float: left;
     padding-right: .2em;
+    line-height: 42px;
     padding-left: 0; }
-  .NotAlert.button.icon-right:before {
+  .NotAlert .button .icon-right {
     float: right;
     padding-right: 0;
+    line-height: 42px;
     padding-left: .2em; }
+  
+  .NotAlert .button .icon-left ~ .button{
+    padding-left: 20px !important;
+  }
+  .NotAlert .button .icon-right ~ .button{
+    padding-right: 20px !important;
+  }
+
   .NotAlert.button.button-block, .button.button-full {
     margin-top: 10px;
     margin-bottom: 10px; }
@@ -1645,8 +1459,8 @@ Copyright (c) 2015 Daniel Eden
   height: 40px;
   position: relative;
   text-align: center;
-  -webkit-animation: sk-rotate 2.0s infinite linear;
-  animation: sk-rotate 2.0s infinite linear; }
+  -webkit-animation: notply-dots-rotate 2.0s infinite linear;
+  animation: notply-dots-rotate 2.0s infinite linear; }
 
 .dot1, .dot2 {
   width: 60%;
@@ -1654,10 +1468,10 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: #387ef5;
+  background-color: var(--notply-blue-color);
   border-radius: 100%;
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out; }
+  -webkit-animation: notply-dots-bounce 2.0s infinite ease-in-out;
+  animation: notply-dots-bounce 2.0s infinite ease-in-out; }
 
 .dot2 {
   top: auto;
@@ -1665,22 +1479,22 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-delay: -1.0s;
   animation-delay: -1.0s; }
 
-@-webkit-keyframes sk-rotate {
+@-webkit-keyframes notply-dots-rotate {
   100% {
     -webkit-transform: rotate(360deg); } }
 
-@keyframes sk-rotate {
+@keyframes notply-dots-rotate {
   100% {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg); } }
 
-@-webkit-keyframes sk-bounce {
+@-webkit-keyframes notply-dots-bounce {
   0%, 100% {
     -webkit-transform: scale(0); }
   50% {
     -webkit-transform: scale(1); } }
 
-@keyframes sk-bounce {
+@keyframes notply-dots-bounce {
   0%, 100% {
     transform: scale(0);
     -webkit-transform: scale(0); }
@@ -1701,94 +1515,94 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .NotAlert-success .NotAlert-head{
-  background-color: #5CB85C;
+  background-color: var(--notply-success-color);
 }
 
 .NotAlert-success .dot1, .NotAlert-success .dot2 {
-  background-color: #5CB85C;
+  background-color: var(--notply-success-color);
 }
 
 .NotAlert-success .button,.NotAlert-success .NotAlert-body{
-  color: #5CB85C;
+  color: var(--notply-success-color);
 }
 
 .NotAlert-success .button:last-child{
-  background-color: #5CB85C;
+  background-color: var(--notply-success-color);
   color: #fff;
 }
 
 .NotAlert-success input {
-    color: #5CB85C;
-    border-bottom: 2px solid #5CB85C;
+    color: var(--notply-success-color);
+    border-bottom: 2px solid var(--notply-success-color);
 }
 
 
 .NotAlert-info .NotAlert-head{
-  background-color: #5BC0DE;
+  background-color: var(--notply-info-color);
 }
 
 .NotAlert-info .dot1, .NotAlert-info .dot2 {
-  background-color: #5BC0DE;
+  background-color: var(--notply-info-color);
 }
 
 .NotAlert-info .button,.NotAlert-info .NotAlert-body{
-  color: #5BC0DE;
+  color: var(--notply-info-color);
 }
 
 .NotAlert-info .button:last-child{
-  background-color: #5BC0DE;
+  background-color: var(--notply-info-color);
   color: #fff;
 }
 
 .NotAlert-info input {
-    color: #5BC0DE;
-    border-bottom: 2px solid #5BC0DE;
+    color: var(--notply-info-color);
+    border-bottom: 2px solid var(--notply-info-color);
 }
 
 
 .NotAlert-error .NotAlert-head{
-  background-color: #D9534F;
+  background-color: var(--notply-error-color);
 }
 
 .NotAlert-error .dot1, .NotAlert-error .dot2 {
-  background-color: #D9534F;
+  background-color: var(--notply-error-color);
 }
 
 .NotAlert-error .button,.NotAlert-error .NotAlert-body{
-  color: #D9534F;
+  color: var(--notply-error-color);
 }
 
 .NotAlert-error .button:last-child{
-  background-color: #D9534F;
+  background-color: var(--notply-error-color);
   color: #fff;
 }
 
 .NotAlert-error input {
-    color: #D9534F;
-    border-bottom: 2px solid #D9534F;
+    color: var(--notply-error-color);
+    border-bottom: 2px solid var(--notply-error-color);
 }
 
 
 .NotAlert-warning .NotAlert-head{
-  background-color: #F0AD4E;
+  background-color: var(--notply-warning-color);
 }
 
 .NotAlert-warning .dot1, .NotAlert-warning .dot2 {
-  background-color: #F0AD4E;
+  background-color: var(--notply-warning-color);
 }
 
 .NotAlert-warning .button,.NotAlert-warning .NotAlert-body{
-  color: #F0AD4E;
+  color: var(--notply-warning-color);
 }
 
 .NotAlert-warning .button:last-child{
-  background-color: #F0AD4E;
+  background-color: var(--notply-warning-color);
   color: #fff;
 }
 
 .NotAlert-warning input {
-    color: #F0AD4E;
-    border-bottom: 2px solid #F0AD4E;
+    color: var(--notply-warning-color);
+    border-bottom: 2px solid var(--notply-warning-color);
 }
 
 .NotToast{
@@ -1806,15 +1620,65 @@ Copyright (c) 2015 Daniel Eden
   transition: all 1s !important;
 }
 
+.NotToast .nottext{
+  width: auto;
+}
+
 .NotToast .NotToastBottom{
   position: absolute;
-  width: 97.8%;
-  height: 10px;
+  width: 40%;
+  height: 5px;
   display: block;
   background-color: rgba(255,255,255,0.5);
-  border-radius: 0 0 50px 50px;
+  border-radius: 50px 50px 0 0;
   bottom: 0;
-  left: 3px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0%);
+  transform: translate(-50%,0%);
+}
+
+.NotToast.anim .NotToastBottom{
+  -webkit-animation: NotToastBottom 2.0s infinite linear;
+  animation: NotToastBottom 2.0s infinite linear;
+  width: attr(anim-width);
+}
+
+@-webkit-keyframes NotToastBottom {
+  from, to {
+    width: 100%;
+  }
+
+  10%{
+    width: attr(anim-width);
+  }
+
+  50%{
+    width: attr(anim-width);
+  }
+
+  80%{
+    width: 5px;
+  }
+
+}
+
+@keyframes NotToastBottom {
+  from, to {
+    width: 100%;
+  }
+
+  10%{
+    width: attr(anim-width);
+  }
+
+  50%{
+    width: attr(anim-width);
+  }
+
+  80%{
+    width: 5px;
+  }
+
 }
 
 .NotToastTitle{
@@ -1922,28 +1786,28 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .NotToast-success{
-  background-color: #5CB85C;
+  background-color: var(--notply-success-color);
 }
 .NotToast-success .NotToastTitle{
   background-color: #61de36;
 }
 
 .NotToast-info{
-  background-color: #5BC0DE;
+  background-color: var(--notply-info-color);
 }
 .NotToast-info .NotToastTitle{
   background-color: #648ed5;
 }
 
 .NotToast-warning{
-  background-color: #F0AD4E;
+  background-color: var(--notply-warning-color);
 }
 .NotToast-warning .NotToastTitle{
   background-color: #eb9114;
 }
 
 .NotToast-error{
-  background-color: #D9534F;
+  background-color: var(--notply-error-color);
 }
 .NotToast-error .NotToastTitle{
   background-color: #d1332e;

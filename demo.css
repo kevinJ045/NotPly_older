@@ -39,6 +39,7 @@
         margin-right:2px;
         box-shadow:0 0 0 1px #f6830f inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f6830f, 0 8px 8px 1px rgba(0,0,0,.2);
         text-shadow: none;
+        border-radius: 50px 0 50px 0;
       }
 
       .a:active {
@@ -137,4 +138,29 @@
 .FlashBang input {
     color: #ffd80c;
     border-bottom: 2px solid #ffd80c;
+}
+
+.tableContainer{
+  width: 100%;
+  max-width: 100% !important;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-shadow: none;
+    max-width: 100% !important;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #f6830f;
+}
+
+tr:first-child,td.rare {
+  background-color: #f6830f;
+  color: #ffd80c;
+  font-size: 24px;
+  border-bottom: 1px solid #ffd80c;
 }

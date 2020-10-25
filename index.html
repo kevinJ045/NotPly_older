@@ -10,7 +10,9 @@
     <link rel="icon shortcut" href="images/favicon.png" />
 
 
-    <script src="https://kit.fontawesome.com/1f2404c1fc.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/1f2404c1fc.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://localhost:8080/Documents\itunes\TrebEdit\MYHTMLS\maxcdn.bootstrapcdn.com\icons\font-awesome\css\font-awesome.min.css">    
     
 
     <!-- general styles to make this page look decent -->
@@ -20,10 +22,10 @@
     <a href="https://github.com/kevinj045/notply" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#f6830f; color:#fff; position: fixed; top: -60px; border: 0; right: -60px;transition: .8s;z-index: 100;"
             aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-          <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;"
+          <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="#ffd80c" style="transform-origin: 130px 106px;"
               class="octo-arm"></path>
           <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
+              fill="#ffd80c" class="octo-body"></path>
         </svg>
       </a>
 
@@ -100,13 +102,230 @@
       </p>
     </article>
 
+    <section class="tableContainer">
+      <h2>Properties and Options</h2>
+      <p>Just See These Properties and you won't need to edit this html file to get help</p>
+
+      <table>
+        <tr>
+          <th>option</th>
+          <th>type</th>
+          <th>default</th>
+          <th>component</th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>text(required)</td>
+          <td>String</td>
+          <td>"Text"</td>
+          <td>All</td>
+          <td>The text To Appear</td>
+        </tr>
+        <tr>
+          <td>title(required)</td>
+          <td>String</td>
+          <td>"Title"</td>
+          <td>All(except notifs)</td>
+          <td>The Title of the component</td>
+        </tr>
+        <tr>
+          <td>Sbuttons(optional)</td>
+          <td>Object</td>
+          <td>['Cancel','Okay']</td>
+          <td>Alerts(only)</td>
+          <td>Submit and Cancel buttons in alerts</td>
+        </tr>
+        <tr>
+          <td>onsubmit(optional)</td>
+          <td>Function</td>
+          <td>function(){}</td>
+          <td>Alerts</td>
+          <td>The function on submitting</td>
+        </tr>
+        <tr>
+          <td>oncancel(optional)</td>
+          <td>Function</td>
+          <td>function(){}</td>
+          <td>All</td>
+          <td>The function on cancelling</td>
+        </tr>
+        <tr>
+          <td>callback(optional)</td>
+          <td>Function</td>
+          <td>function(){}</td>
+          <td>All</td>
+          <td>The function on init</td>
+        </tr>
+        <tr>
+          <td>type(required)</td>
+          <td>String</td>
+          <td>"notply"</td>
+          <td>All</td>
+          <td>The type of the notply</td>
+        </tr>
+        <tr>
+          <td>icon(optional)</td>
+          <td>String</td>
+          <td>null</td>
+          <td>Notifications</td>
+          <td>The Icons in notifs</td>
+        </tr>
+        <tr>
+          <td>theme(optional)</td>
+          <td>String</td>
+          <td>"default"</td>
+          <td>All</td>
+          <td>Mainly for customizing the component</td>
+        </tr>
+        <tr>
+          <td>transition(optional)</td>
+          <td>String \|</td>
+          <td>"1s"</td>
+          <td>Notifs & Toasts</td>
+          <td>The time to appear and to disappear</td>
+        </tr>
+        <tr>
+          <td>position(optional)</td>
+          <td>String</td>
+          <td>"top"</td>
+          <td>toasts</td>
+          <td>The Position of toasts</td>
+        </tr>
+        <tr>
+          <td>borderRadius(optional)</td>
+          <td>String</td>
+          <td>null</td>
+          <td>Toasts</td>
+          <td>The Corner roundness of toasts</td>
+        </tr>
+        <tr>
+          <td>pt(optional)</td>
+          <td>String</td>
+          <td>"text"</td>
+          <td>Alerts</td>
+          <td>The input type(only password & text)</td>
+        </tr>
+        <tr>
+          <td>closebtn(optional)</td>
+          <td>Boolean</td>
+          <td>true</td>
+          <td>Toasts</td>
+          <td>Canceles The (x) To Close The Toast</td>
+        </tr>
+        <tr>
+          <td>darkTheme(optional)</td>
+          <td>Boolean</td>
+          <td>false</td>
+          <td>Alerts</td>
+          <td>Make Alerts Dark</td>
+        </tr>
+      </table>
+    </section>
+
+     <section class="tableContainer">
+      <h2>Conponents</h2>
+      <p>Comparing b/n All Components</p>
+
+      <table>
+        <tr>
+          <th>Item:</th>
+          <th>Notifs</th>
+          <th>Alerts</th>
+          <th>Toasts</th>
+          <th>Sheets</th>
+        </tr>
+        <tr>
+          <td class="rare">Functionality</td>
+          <td>100%</td>
+          <td>80%</td>
+          <td>100%</td>
+          <td>90%</td>
+        </tr>
+        <tr>
+          <td class="rare">Speed</td>
+          <td>100%</td>
+          <td>87%</td>
+          <td>100%</td>
+          <td>91%</td>
+        </tr>
+        <tr>
+          <td class="rare">On Callback</td>
+          <td>99%</td>
+          <td>81%</td>
+          <td>99%</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td class="rare">Compatiblity</td>
+          <td>100%</td>
+          <td>80%</td>
+          <td>80%</td>
+          <td>80%</td>
+        </tr>
+        <tr>
+          <td class="rare">Customizablity</td>
+          <td>100%</td>
+          <td>62%</td>
+          <td>91%</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td class="rare">Recommendation</td>
+          <td>70%</td>
+          <td>100%</td>
+          <td>70%</td>
+          <td>66%</td>
+        </tr>
+        <tr>
+          <td class="rare">Usefullness</td>
+          <td>100%</td>
+          <td>100%</td>
+          <td>67%</td>
+          <td>54%</td>
+        </tr>
+        <tr>
+          <td class="rare">Average</td>
+          <td>95%</td>
+          <td>84%</td>
+          <td>86%</td>
+          <td>83%</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="tableContainer">
+      <h2>Functions</h2>
+      <p>Notply Functions</p>
+
+      <table>
+        <tr>
+          <th>Function</th>
+          <th>Use</th>
+        </tr>
+        <tr>
+          <td>$('Element').NotPly(options)</td>
+          <td>Creating A component</td>
+        </tr>
+        <tr>
+          <td>$.NotPly(options)</td>
+          <td>Creating A component with the body element</td>
+        </tr>
+        <tr>
+          <td>$('Element').$NotPly(callback,type)</td>
+          <td>Make a callback if there's an active component</td>
+        </tr>
+        <tr>
+          <td>$('Element').$NotPly$remove(EL,type)</td>
+          <td>Removes All Notply Components</td>
+        </tr>
+      </table>
+    </section>
+
     <section>
       <h2>Normal</h2>
       <p>Look at this. This notification is customizable, you can change the text and the icon</p>
       <a class="a" href="#!" onclick="
-      $('body').NotPly({
-        text: 'Normal Simple Notply'
-      });
+      $('body').NotPly('Normal Simple Notply');
       "> NotPly Me !</a>
       <a class="a" href="#!" onclick="
       $('body').NotPly({
@@ -180,7 +399,7 @@
       <a class="a" onclick="
       $('body').NotPly({
         text: 'Transition 0.5s',
-        transition: '0.5',
+        transition: '0.5s',
       });
       " href="#!"> 0.5s</a>
       <a class="a" onclick="
@@ -248,6 +467,15 @@
         borderRadius: '10px',
       });
       ">Custom radius</a>
+
+      <a class="a" onclick="
+      $('body').NotPly({
+        text: 'Animated Toast',
+        title: 'Demo Anim',
+        type: 'toast',
+        theme: 'anim',
+      });
+      ">Animated</a>
     </section>
 
     <section>
@@ -415,7 +643,8 @@
       $('body').NotPly({
         text: 'Please Wait',
         title: 'Loading',
-        type: 'ALert loading', 
+        type: 'ALert loading=5000', 
+        borderRadius: '50px',
       });
       "> Loading</a>
 
@@ -429,11 +658,28 @@
 
       <a class="a"onclick="
       $('body').NotPly({
+        text: 'Look at the buttons',
+        title: 'Hii',
+        Sbuttons: ['<i class=\'icon-right fa fa-user\'></i> Nope','<i class=\'icon-left fa fa-user\'></i> Yup'],
+        type: 'ALert confirm',
+      });
+      "> Icon Button</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
         text: '<input type=\'text\' placeholder=\'Custom HTML\'>',
         title: '<i>Hii</i>',
         type: 'ALert',
       });
       "> Html</a>
+
+      <a class="a"onclick="
+      $('body').NotPly({
+        text: '<input type=\'text\' placeholder=\'Custom HTML\'>',
+        title: '<i>Hii</i>',
+        type: 'ALert',
+      });
+      "> Callback</a>
 
       <a class="a"onclick="
       $('body').NotPly({
@@ -477,7 +723,7 @@
       $('body').NotPly({
         text: 'Prompt Password Type',
         title: 'Pasword',
-        type: 'ALert prompt', 
+        type: 'ALert input', 
         pt: 'password',
         onsubmit: function(ee){alert('Password Is: ' + ee)},
         oncancel: function(){alert('canceled')},
@@ -491,8 +737,9 @@
       $('body').NotPly({
         text: 'Please Wait',
         title: 'Loading',
-        type: 'ALert loading', 
+        type: 'ALert loading=5000', 
         theme: 'success',
+        borderRadius: '50px',
       });
       "> Theme : success</a>
 
@@ -548,8 +795,9 @@
       $('body').NotPly({
         text: 'Please Wait',
         title: 'Loading',
-        type: 'ALert loading', 
+        type: 'ALert loading=5000', 
         theme: 'FlashBang',
+        borderRadius: '50px',
       });
       "> Theme : Custom</a>
       
@@ -641,7 +889,7 @@
         text: 'I am a NotPly <span id=\'TypeComponent\'>Type</span>',
         title: 'Callback',
         type: 'toast',
-        callback: function(a,b,c){
+        callback: function(a,b,c){ // You Can Make The a,b,c title,text,type
           alert('Title: '+a+', Text: '+b+', Type: '+c);
           $('#TypeComponent').text(c)
         },
@@ -679,7 +927,9 @@
       </a>
 
       <a class="a" href="#" data-notply="true" data-text="The text" data-title="The Title" data-type="alert" data-theme="custom2" 
-      data-callback="alert('hii')">
+      data-callback="$('body').NotPly({
+        text: 'Callback Fired !!',
+      })">
         Callback
       </a>
     </section>
@@ -687,7 +937,7 @@
     <section>
       <h2>My Projects</h2>
       <p>So... Did You Love The Plugin? Well Thanks For Downloading, So if you want to know more about my projects, click the Link below</p>
-      <a class="a" href="https://nextcog.epizy.com">
+      <a class="a" href="http://nextcog.epizy.com">
         Visit My Site
       </a>
     </section>
@@ -706,7 +956,7 @@
           }
 
           // For Default make $('body').NotPly(), 
-          // For Custom Elements make $('body').NotPly()
+          // For Custom Elements make $('element').NotPly()
           $('body').NotPly({ 
             text: text, // All || type: string 
             title: title, // All || type: string
@@ -724,6 +974,8 @@
             borderRadius: radius, // only for toasts || type: string
           });
     }
+
+
 
     /*alert($.fn.notply.name)
     alert($.fn.notply.version)*/

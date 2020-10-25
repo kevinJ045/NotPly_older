@@ -47,7 +47,7 @@ function callback(){
 }
 
 $.ajax({
-    url: 'https://api.github.com/repos/kevinj045/notply/commits/v1-dev',
+    url: 'https://api.github.com/repos/kevinj045/notply/commits/master',
     dataType: 'json',
     success: function(data) {
       var sha = data.sha;

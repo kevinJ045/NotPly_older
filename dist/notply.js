@@ -41,6 +41,9 @@ NotPly version 2.0.6.0.0.221.01
 
  var plugin = { 
   name: 'NotPly',
+  developer: 'Kevin',
+  description: 'A Notification plugin',
+  git_repo: 'https://github.com/kevinj045/notply',
   version: "2.0.6.0.0.221.01"
   },
  defaults = {
@@ -51,59 +54,67 @@ NotPly version 2.0.6.0.0.221.01
   oncancel: function(){}, // For: All, Type: Function, Description: Function, To be Happening on Canceling, 
   callback: function(){}, // For: All, Type: Function, Description: Function, To be Happening on Initiation of any component,
   type: "notply", // For: All, Type: String !important, Description: The type, Which type or component do you want?,
-  icon: "", // For: Notifications, Type: String, Description: Icon For notifications,
+  icon: null, // For: Notifications, Type: String, Description: Icon For notifications,
   theme: "default", // For: All, Type: String, Description: Theme. To add colors or custom css,
   transition: "1s", // For: Notifications And Toasts, Type: String, Description: Animation Duration,
   position: "top", // For: Toasts, Type: String, Description: Position Of toasts,
-  borderRadius: "", // For: Toasts, Type: String, Description: Border radius For toasts,
+  borderRadius: null, // For: Toasts, Type: String, Description: Border radius For toasts,
   pt: "text", // For: Alerts, Type: String, Description: Prompt/text type,
   closebtn: true, // For: Toasts, Type: Boolean, Description: Close Button For toasts,
   darkTheme: false, // For: Alerts, Type: Boolean, Description: Makes The Background of alerts dark
 }
 
-function NotPly(element,options){
+function NotPly(element,options,type){
 
   this.element = element;
 
   this.settings = $.extend({}, defaults, options);
 
-  this.init();
+  if(type){ this.init(type)} else {this.init()}
 }
 
 // Add Prototype So The plugin can inherit it's property from it's proto
 
 NotPly.prototype = {
 
-  init: function(element,text){
+  init: function(TYPE){
 
     // Declare The Main Variables, To use them On the function,
 
 
     var that = this,
-        title = that.settings.title;
-        text = that.settings.text;
-        type = that.settings.type;
-        icon = that.settings.icon;
-        theme = that.settings.theme;
-        onsubmit = that.settings.onsubmit;
-        oncancel = that.settings.oncancel;
-        callback = that.settings.callback;
-        buttons = that.settings.Sbuttons;
-        transition = that.settings.transition;
-        borderRadius = that.settings.borderRadius;
-        position = that.settings.position;
-        closebtn = that.settings.closebtn;
-        pt = that.settings.pt;
+        SettingS = that.settings,
+        title = SettingS.title,
+        text = SettingS.text,
+        type = SettingS.type,
+        icon = SettingS.icon,
+        theme = SettingS.theme,
+        onsubmit = SettingS.onsubmit,
+        oncancel = SettingS.oncancel,
+        callback = SettingS.callback,
+        buttons = SettingS.Sbuttons,
+        transition = SettingS.transition,
+        borderRadius = SettingS.borderRadius,
+        position = SettingS.position,
+        closebtn = SettingS.closebtn,
+        pt = SettingS.pt,
         element = that.element;
 
     // Choose or Match What Kind of notply, by matching the type,
 
+
+    if(TYPE){
+      type = TYPE;
+    } else {
+      type = type;
+    }
+
     if(type.match(/notply/i)){ // Making Regular Expressions so it will be case insensitive
       that.notply(element,text,theme,icon,transition,oncancel);
     } else if(type.match(/alert/i)){
-      that.alert(element,text,title,theme,type.replace(/alert/i,''),pt,onsubmit,oncancel,buttons)
+      that.alert(element,text,title,theme,type.replace(/alert/i,''),pt,onsubmit,oncancel,buttons,borderRadius)
     } else if(type.match(/toast/i)){
-      that.toast(element,text,title,theme,position,borderRadius,closebtn,oncancel)
+      that.toast(element,text,title,theme,transition,position,borderRadius,closebtn,oncancel)
     } else if(type.match(/sheet/i)){
       that.sheet(element,text,title,theme,transition,oncancel)
     } else {
@@ -118,12 +129,13 @@ NotPly.prototype = {
 
   },
 
+
   notply: function(element,NotPlymessage,
     NotPlytheme,NotPlyicon,NotPlytransition,NotPlycancelfun){
 
     var that = this,ifIcon;
 
-    if(NotPlyicon != ''){
+    if(NotPlyicon != '' && NotPlyicon != null){
       ifIcon = `<i class="icon ` + NotPlyicon + `"></i>`;
     } else {
       ifIcon = '';
@@ -135,10 +147,10 @@ NotPly.prototype = {
         $(element).append(`
           <div style="animation-duration:` +  NotPlytransition + `!important;" 
           class="notply ` + NotPlytheme + ` 
-          animated bounceInDown">
+          animated bounceInDown NotPlyComonent">
           `+ifIcon+`
           `+`<div class="message">` + NotPlymessage + `</div><br>`+`
-          <span data-close-notply="true">
+          <span data-close-notply="true" class="notCloser_remover">
           <i class="closeBtn"></i></span>
           </div>`);
 
@@ -146,8 +158,17 @@ NotPly.prototype = {
 
             var CN = $(this).closest(".notply");
 
+            var trans = Number(NotPlytransition.replace('s',''));
+            
+            if(trans < 1){
+              trans = trans * 10;
+              trans = Number(trans + '00');
+            } else {
+              trans = Number(trans + '000')
+            }
+
             that.close(CN,function(){},
-              Number(NotPlytransition.replace('s','') + '000'),function(){
+              trans,function(){
                 if($.isFunction(NotPlycancelfun)){
                   NotPlycancelfun(0);
                 }
@@ -157,10 +178,10 @@ NotPly.prototype = {
 
       },
 
-      alert: function(element,text,title,theme,type,pt,onsubmit,oncancel,buttons){
+      alert: function(element,text,title,theme,type,pt,onsubmit,oncancel,buttons,br){
 
-        var that = this,Sbuttons,cbutton,
-        darkTheme = that.settings.darkTheme,darkMode,ifHeader,PT;
+        var that = this,Sbuttons,cbutton,SettingS = that.settings,
+        darkTheme = SettingS.darkTheme,darkMode,ifHeader,PT;
 
         if(buttons && typeof buttons == "object" && buttons.length < 3){ // You can Clear The last one,
           Sbuttons = buttons[1];
@@ -172,7 +193,7 @@ NotPly.prototype = {
 
          $(element).addClass("overflowHidden");
 
-         $("#activeNotAlert").remove();
+         $(".activeNotAlert").remove();
 
            if(title != defaults.title){
               var title = title;
@@ -208,6 +229,7 @@ NotPly.prototype = {
            var ifInput = "";
            var ifConfirm = "";
            var ifLoading = "";
+           var isLoadingAndTimeout = "NotALoading";
 
            var isHeader = `
                   <div class="NotAlert-head">
@@ -216,8 +238,8 @@ NotPly.prototype = {
                     </div>
                   </div>`
 
-          var sB = '<button class="button" id="NotAlertSubmitButton">'+Sbuttons+'</button>',
-          cB = '<button class="button" id="NotAlertButton">'+cbutton+'</button>';
+          var sB = '<button class="button NotAlertSubmitButton">'+Sbuttons+'</button>',
+          cB = '<button class="button NotAlertCancelButton">'+cbutton+'</button>';
 
            var isConfirm = `
               <div class="NotAlert-buttons">
@@ -226,7 +248,7 @@ NotPly.prototype = {
              `;
            var isInput = `
               <br>
-              <input id="NotAlertInput" type="`+PT+`">
+              <input class="NotAlertInput" type="`+PT+`">
               <br>
             `;
           var isLoading = `<center>
@@ -235,23 +257,29 @@ NotPly.prototype = {
                 <div class="dot2"></div>
               </div>
               </center>
-              <br>`
+              <br>`;
 
-           if(type == " confirm"){
+            type = type.trim();
+
+            //alert("this_"+type)
+
+           if(type == "confirm"){
              ifInput = ``;
              ifConfirm = isConfirm;
              ifLoading = "";
              ifHeader = isHeader;
-          } else if (type == " prompt") {
+          } else if (type == "prompt" || type == "input") {
             ifConfirm = isConfirm;
             ifInput = isInput;
             ifLoading = "";
             ifHeader = isHeader;
-          } else if (type == " loading") {
+          } else if (type.match(/loading=/i)) {
+            var typeRemains = type.split('loading=')[1];
             ifConfirm = '';
             ifInput = "";
             ifLoading = isLoading;
             ifHeader = '';
+            isLoadingAndTimeout = Number(typeRemains);
           } else {
             ifLoading = "";
             ifInput = ``;
@@ -266,8 +294,8 @@ NotPly.prototype = {
           }
 
           $(element).append(`
-           <div class="NotAlert-container ` + darkMode +`" id="activeNotAlert">
-              <div class="NotAlert-overlay" id="NotAlertOverlay"></div>
+           <div class="NotAlert-container ` + darkMode +` activeNotAlert NotPlyComonent">
+              <div class="NotAlert-overlay NotAlertOverlay notCloser_remover"></div>
                 <div class="NotAlert ` + Ptheme + ` animated " 
                 id="NotNotAlert">
                   `+ifHeader+`
@@ -281,39 +309,80 @@ NotPly.prototype = {
               </div>
            `);
 
-          $("#NotAlertSubmitButton").click(function(){
+          if(br != defaults.borderRadius){
+            $('.NotAlert').css({
+              'border-radius': br
+            })
+          }
+
+          $('.activeNotAlert').on("keydown",function(e){
+            keyboardKey = e.which || e.keyCode;
+            if (keyboardKey == 13) {
+              $(".activeNotAlert .NotAlertSubmitButton").click();
+            } else if(keyboardKey == 27){
+              $(".activeNotAlert .NotAlertOverlay").click();
+            } else {}
+          });
+
+          $('.activeNotAlert').focus();
+
+          $(".NotAlertSubmitButton").click(function(){
+            var Notalert = $(this).closest('.activeNotAlert');
             if($.isFunction(onsubmit)){
-              if ($("#NotAlertInput")){
-                onsubmit($("#NotAlertInput").val());
+              if (Notalert.find(".NotAlertInput")){
+                onsubmit(Notalert.find(".NotAlertInput").val());
               } else {
                 onsubmit(1);
               }
             }
-            that.close($('#activeNotAlert'),function(){},
+            that.close(Notalert,function(){},
               1000,function(){
                 $(element).removeClass("overflowHidden");
-              },$('#activeNotAlert'));
+              },Notalert);
           });
 
-            $("#NotAlertInput").on("keydown",function(e){
+            $(".NotAlertInput").on("keydown",function(e){
+              var Notalert = $(this).closest('.activeNotAlert');
               keyboardKey = e.which || e.keyCode;
-            if (keyboardKey == 13) {
-                 $('#NotAlertSubmitButton').click()
-            } else {}
-          });
+              if (keyboardKey == 13) {
+                 Notalert.find('.NotAlertSubmitButton').click()
+              } else {}
+            });
 
-            $("#NotAlertButton,#activeNotAlert .notClose,#NotAlertOverlay").click(function(){
-              that.close($('#activeNotAlert'),function(){
+            if(isLoadingAndTimeout !== 'NotALoading'){
+              var isLoadingAndTimeout_time = setTimeout(function() {
+                $('.NotAlertOverlay').each(function(){
+                  var Notalert = $(this).closest('.activeNotAlert');
+                  that.close(Notalert,function(){
+                    if($.isFunction(oncancel)){
+                      oncancel(0);
+                    }
+                  },1000,function(){
+                    $(element).removeClass("overflowHidden");
+                  },Notalert);
+                  clearTimeout(isLoadingAndTimeout_time);
+                });
+              }, isLoadingAndTimeout);
+            } else {}
+
+            $(".NotAlertCancelButton,.activeNotAlert .notClose,.NotAlertOverlay").click(function(){
+              var Notalert = $(this).closest('.activeNotAlert');
+              
+              if(isLoadingAndTimeout_time){
+                clearTimeout(isLoadingAndTimeout_time);
+              }
+
+              that.close(Notalert,function(){
                 if($.isFunction(oncancel)){
                   oncancel(0);
                 }
               },1000,function(){
                 $(element).removeClass("overflowHidden");
-              },$('#activeNotAlert'));
+              },Notalert);
             });
           },
 
-          toast: function(element,text,title,theme,position,br,closebtn,oncancel){
+          toast: function(element,text,title,theme,transition,position,borderRadius,closebtn,oncancel){
             
             var that = this;
 
@@ -357,26 +426,67 @@ NotPly.prototype = {
             Ttheme = "none"
           }          
 
-          var IFclosebtn = '<span class="NotToastClose"></span>';
+          var IFclosebtn = '<span class="NotToastClose notCloser_remover"></span>';
 
           if(closebtn !== true){
-            IFclosebtn = '<span class="NotToastClose" hidden="" style="display:none"></span>';
+            IFclosebtn = '<span class="NotToastClose notCloser_remover" hidden="" style="display:none"></span>';
           } else {
-            IFclosebtn = '<span class="NotToastClose"></span>';
+            IFclosebtn = '<span class="NotToastClose notCloser_remover"></span>';
           }
 
-          $(element).append(`<div style="animation-duration:` +  transition + `!important;transition: all ` +  transition + ` !important;border-radius: ` + br + ` !important;" class="` + position +` NotToast animated ` + theme + `"> 
+          var br;
+
+          if(borderRadius != null){
+            br = borderRadius
+          } else {
+            br = "20px";
+          }
+
+          $(element).append(`<div style="animation-duration:` +  transition + `!important;transition: all ` +  transition + ` !important;border-radius: ` + br + ` !important;" class="` + position +` NotToast animated ` + theme + ` NotPlyComonent"> 
             <span style="border-radius: ` + br + ` !important;" class="NotToastTitle ` + Ttheme + `">` + title + `</span>
-              <span>` + text + `</span>
-              <div style="border-radius: ` + br + ` !important;" class="NotToastBottom"></div>
+              <span class="nottext">` + text + `</span>
+              <div style="border-radius: ${br} ${br} 0 0 !important;animation-duration: calc(` +  transition + ` + 1s) !important;" class="NotToastBottom"></div>
               `+IFclosebtn+`
             </div>
           `);
 
+          $('.NotToastBottom').each(function(){
+            var ths = $(this),
+            thsToast = ths.closest('.NotToast'),
+            thsText = thsToast.find('.nottext'),
+            widthOFF = thsText.width();
+
+            if(thsToast.hasClass('anim')){
+              ths.attr({
+                'anim-width': widthOFF
+              });
+              ths.css({
+                'width': widthOFF
+              });
+            } else {
+              ths.css({
+                'width': widthOFF
+              });
+            }
+
+            
+            
+          });
+
           $(".NotToast > .NotToastClose,.NotToast .notClose").click(function(){
             var CT = $(this).closest(".NotToast");
+
+            var trans = Number(transition.replace('s',''));
+
+            if(trans < 1){
+              trans = trans * 10;
+              trans = Number(trans + '00');
+            } else {
+              trans = Number(trans + '000')
+            }
+
             that.close(CT,function(){},
-              Number(transition.replace('s','') + '000'),function(){
+              trans,function(){
                 if($.isFunction(oncancel)){
                   oncancel(0);
                 }
@@ -392,11 +502,11 @@ NotPly.prototype = {
             var that = this;
 
             $(element).append(`
-              <div class="Notbottomsheet">
+              <div class="Notbottomsheet NotPlyComonent">
                 <div class="NotbottomsheetOverlay"></div>
                   <div class="Notbottomsheet-content `+theme+`" style="animation-duration:` +  transition + `!important;">
                       <div class="Notbottomsheet-header">
-                          <span class="Notbottomsheetend"></span>
+                          <span class="Notbottomsheetend notCloser_remover"></span>
                           <h2>` + title + `</h2>
                       </div>
                       <div class="Notbottomsheet-body">
@@ -462,25 +572,77 @@ NotPly.prototype = {
 
 // Initiate the jquery plugin, $.fn.name,
 
-$.fn[plugin.name] = function(options) {
+$.fn.NotPly = function(options) {
+  if(typeof options == "object"){
     if (!$.data(this, "plugin_" + plugin.name)) {
       $.data(this, "plugin_" + plugin.name, new NotPly(this, options));
     }
+  } else if(typeof options == "string") {
+    if (!$.data(this, "plugin_" + plugin.name)) {
+      $.data(this, "plugin_" + plugin.name, new NotPly(this, {text: options}));
+    }
+  } else {
+    if (!$.data(this, "plugin_" + plugin.name)) {
+      $.data(this, "plugin_" + plugin.name, new NotPly(this, {theme: "notply-error",text: "The Type Of The Properties Must Be String, You Put " + typeof options}));
+    }
+  }
   return this;
 };
 
 // Initiate the jquery plugin, $.fn
 
-$[plugin.name] = function(options){
-  if (!$.data('body', "plugin_" + plugin.name)) {
-      $.data('body', "plugin_" + plugin.name, new NotPly('body', options));
+$.NotPly = function(options){
+  $('body').NotPly(options)
+}
+
+// Initiate the jquery plugin, $.fn
+
+$.fn.$NotPly = function(callback,type){
+  var el = this,
+  comp = '.NotPlyComonent';
+
+  if($(el).find(comp).length){
+    if($.isFunction(callback)){
+      callback($(el).find(comp),type);
+    } else {}
+    return true;
+  } else {
+    return false;
+  }
+}
+
+$.fn.$NotPly$remove = function(EL,type){
+  var el = this,
+  comp = '.NotPlyComonent',
+  compClose = '.notCloser_remover';
+
+  if(EL){
+    if($(el).find(EL).length){
+      $(el).find(EL).each(function(){
+        var FunToRemove = $(this).find(compClose).click();
+        if($.isFunction(FunToRemove)){
+          FunToRemove();
+        } else {}
+      });
     }
-  return 'body';
+  } else {
+
+    if($(el).find(comp).length){
+      $(el).find(comp).each(function(){
+        var FunToRemove = $(this).find(compClose).click();
+        if($.isFunction(FunToRemove)){
+          FunToRemove();
+        } else {}
+      });
+    }
+
+  }
+
 }
 
 // Using data- attribute Function,
 
-$('[data-notply]').click(function(e){
+$('[data-notply],[data-notply]').click(function(e){
   e.preventDefault();
   var that = $(this),datas = {
     element: that.data('element'),
@@ -556,5 +718,7 @@ $('[data-notply]').click(function(e){
 // Initiate The Informations about the plugin,
 
 $.fn.notply = plugin;
+
+return plugin.name;
 
 })(jQuery,window,document);
