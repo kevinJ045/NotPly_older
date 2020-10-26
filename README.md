@@ -1,8 +1,20 @@
 # Notply: A Notification Plugin !!
 
-<p>NotPly is a simple plugin that let's you show notifications, There are 3 types of notifications here:</p>
-<p> Hey Hey, and also, to use this plugin, use <code>$('body').NotPly()</code> But make sure it's on a big container like <code>&lt;html></code> tag or <code>&lt;body></code> tag, <code>$('#bigElement').NotPly()<code>
-</p><p>if you want use the ```$("body").NotPly()``` method</p>
+NotPly is a simple plugin that let's you show notifications, There are 4 types of notifications here
+Hey Hey, and also, to use this plugin, use 
+```js
+$('body').NotPly()
+``` 
+But make sure it's on a big container like <code>&lt;html></code> tag or <code>&lt;body></code> tag, 
+```js
+$('#bigElement').NotPly()
+```
+
+if you want use the 
+```js
+$.NotPly()
+```
+method
 
 ### Example
 
@@ -26,5 +38,5 @@
 ```
 
 ```html
-<script src="/path/to/notply.css"></script>
+<script src="/path/to/notply.js"></script>
 ```
