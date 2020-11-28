@@ -1,12 +1,8 @@
-#NotPly
+# NotPly
 
-A Notification plugin
+This plugin adds over 4 new notificationsto your projects, 
 
-Notifications
-=============
+those are: Notifications,Toasts,Alerts And Bottom sheets
 
-This plugin adds over 4 new notifications
-to your projects, 
 
-those are:Notifications,Toasts,Alerts
- And Bottom sheets
+## Visit the [wiki](https://github.com/NextSpot045/NotPly/wiki) For more Info.
